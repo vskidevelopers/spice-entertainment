@@ -9,6 +9,8 @@ import {
 import "./index.css";
 import Home from "./pages/Home";
 import UserUi from "./layouts/UserUi";
+import Music from "./pages/Music";
+import MusicDetail from "./pages/MusicDetail";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +18,8 @@ const router = createBrowserRouter(
       {/* userUiRoutes */}
       <Route path="/" element={<UserUi />}>
         <Route index element={<Home />} />
+        <Route path="music/:id" element={<MusicDetail />} />
+        <Route path="music" element={<Music />} />
       </Route>
     </Route>
   )

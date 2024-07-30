@@ -2852,12 +2852,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.416.0":
-  version: 0.416.0
-  resolution: "lucide-react@npm:0.416.0"
+"lucide-react@npm:^0.417.0":
+  version: 0.417.0
+  resolution: "lucide-react@npm:0.417.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: ee3909941b648546535dd416daa8a4398f480a0a2eaa37182e227cc46c240d0eb406a819c1f838c103bf4f08e765f806e2d2a336b3d8c080ea6ae87c5b05e687
+  checksum: 9b214064a10fe7c50fe316ec60e88d9183840f5f78d0939362f2c3551ff146d75c6368c0b8359dfc7dae0b399aef7b27d45406d0e3126699cd00a9f1af1595df
   languageName: node
   linkType: hard
 
@@ -3457,6 +3457,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-icons@npm:^5.2.1":
+  version: 5.2.1
+  resolution: "react-icons@npm:5.2.1"
+  peerDependencies:
+    react: "*"
+  checksum: f084ea7409a3986c03b7805d0787d8526e2c988439a39f485cc526ec1b2eb6ec78e7b69345478151ce94bca8522737c6569203c8ab8b8ff08542b496f954bdfb
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -3874,10 +3883,11 @@ __metadata:
     eslint-plugin-react: ^7.34.3
     eslint-plugin-react-hooks: ^4.6.2
     eslint-plugin-react-refresh: ^0.4.7
-    lucide-react: ^0.416.0
+    lucide-react: ^0.417.0
     postcss: ^8.4.40
     react: ^18.3.1
     react-dom: ^18.3.1
+    react-icons: ^5.2.1
     react-router-dom: ^6.25.1
     tailwind-merge: ^2.4.0
     tailwindcss: ^3.4.7

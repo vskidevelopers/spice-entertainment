@@ -40,10 +40,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:7.35.0"],\
             ["eslint-plugin-react-hooks", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:4.6.2"],\
             ["eslint-plugin-react-refresh", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:0.4.9"],\
-            ["lucide-react", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:0.416.0"],\
+            ["lucide-react", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:0.417.0"],\
             ["postcss", "npm:8.4.40"],\
             ["react", "npm:18.3.1"],\
             ["react-dom", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:18.3.1"],\
+            ["react-icons", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:5.2.1"],\
             ["react-router-dom", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:6.25.1"],\
             ["tailwind-merge", "npm:2.4.0"],\
             ["tailwindcss", "npm:3.4.7"],\
@@ -3392,17 +3393,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["lucide-react", [\
-        ["npm:0.416.0", {\
-          "packageLocation": "./.yarn/cache/lucide-react-npm-0.416.0-a1716e7dbc-ee3909941b.zip/node_modules/lucide-react/",\
+        ["npm:0.417.0", {\
+          "packageLocation": "./.yarn/cache/lucide-react-npm-0.417.0-182195be3f-9b214064a1.zip/node_modules/lucide-react/",\
           "packageDependencies": [\
-            ["lucide-react", "npm:0.416.0"]\
+            ["lucide-react", "npm:0.417.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:0.416.0", {\
-          "packageLocation": "./.yarn/__virtual__/lucide-react-virtual-f4cc3d4c62/0/cache/lucide-react-npm-0.416.0-a1716e7dbc-ee3909941b.zip/node_modules/lucide-react/",\
+        ["virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:0.417.0", {\
+          "packageLocation": "./.yarn/__virtual__/lucide-react-virtual-e109703d0b/0/cache/lucide-react-npm-0.417.0-182195be3f-9b214064a1.zip/node_modules/lucide-react/",\
           "packageDependencies": [\
-            ["lucide-react", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:0.416.0"],\
+            ["lucide-react", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:0.417.0"],\
             ["@types/react", "npm:18.3.3"],\
             ["react", "npm:18.3.1"]\
           ],\
@@ -4149,6 +4150,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-icons", [\
+        ["npm:5.2.1", {\
+          "packageLocation": "./.yarn/cache/react-icons-npm-5.2.1-e27cbb9ccf-f084ea7409.zip/node_modules/react-icons/",\
+          "packageDependencies": [\
+            ["react-icons", "npm:5.2.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:5.2.1", {\
+          "packageLocation": "./.yarn/__virtual__/react-icons-virtual-1db5fc9b1e/0/cache/react-icons-npm-5.2.1-e27cbb9ccf-f084ea7409.zip/node_modules/react-icons/",\
+          "packageDependencies": [\
+            ["react-icons", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:5.2.1"],\
+            ["@types/react", "npm:18.3.3"],\
+            ["react", "npm:18.3.1"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-is", [\
         ["npm:16.13.1", {\
           "packageLocation": "./.yarn/cache/react-is-npm-16.13.1-a9b9382b4f-f7a19ac349.zip/node_modules/react-is/",\
@@ -4550,10 +4573,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:7.35.0"],\
             ["eslint-plugin-react-hooks", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:4.6.2"],\
             ["eslint-plugin-react-refresh", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:0.4.9"],\
-            ["lucide-react", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:0.416.0"],\
+            ["lucide-react", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:0.417.0"],\
             ["postcss", "npm:8.4.40"],\
             ["react", "npm:18.3.1"],\
             ["react-dom", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:18.3.1"],\
+            ["react-icons", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:5.2.1"],\
             ["react-router-dom", "virtual:7dd8da3cf6e49f5b7d90d64dc6af4d2efb1a88937c0c72825b1063093bacb8948b8c301d3661219a02d3d6f005a4c723da41020d3a6974785ff4625466b9e9a5#npm:6.25.1"],\
             ["tailwind-merge", "npm:2.4.0"],\
             ["tailwindcss", "npm:3.4.7"],\

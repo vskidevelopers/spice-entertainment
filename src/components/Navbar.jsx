@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/images/logo.png";
+import { User } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -9,16 +11,12 @@ const Navbar = () => {
     <nav className="bg-black text-white p-4 flex items-center justify-between fixed w-full z-50 ">
       <div className="flex items-center">
         <div className="text-xl font-bold">
-          <img
-            className="block h-12 w-auto lg:hidden"
-            src={logo}
-            alt="Your Company"
-          />
+          <img className="block h-12 w-auto " src={logo} alt="Your Company" />
         </div>
         <div className="hidden md:flex space-x-4 ml-10">
-          <a href="#music" className="hover:text-gray-400">
+          <Link to="/music" className="hover:text-gray-400">
             Music
-          </a>
+          </Link>
           <a href="#shop" className="hover:text-gray-400">
             Shop
           </a>
@@ -32,7 +30,7 @@ const Navbar = () => {
           onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)}
           className="focus:outline-none"
         >
-          User
+          <User className="h-3 w-4" />
         </button>
         {isUserDropdownOpen && (
           <div className="absolute z-40 right-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg">
