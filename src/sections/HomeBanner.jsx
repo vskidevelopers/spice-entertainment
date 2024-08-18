@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import backgroundImage from "../assets/images/Infamous.jpeg";
 
 const HomeBanner = () => {
@@ -13,9 +14,12 @@ const HomeBanner = () => {
           <h1 className="text-4xl text-wrap uppercase md:text-6xl font-bold mb-4 ">
             Infamous <br /> Gangsta
           </h1>
-          <button className="px-4 py-2 border border-white text-white hover:bg-white hover:text-black transition duration-300">
+          <Link
+            to="music/1"
+            className="px-4 py-2 border border-white text-white hover:bg-white hover:text-black transition duration-300"
+          >
             Stream / Download
-          </button>
+          </Link>
         </div>
       </div>
     </div>

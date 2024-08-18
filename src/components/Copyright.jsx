@@ -1,5 +1,3 @@
-import React from "react";
-
 const Copyright = () => {
   return (
     <footer className="bg-black text-white py-4">

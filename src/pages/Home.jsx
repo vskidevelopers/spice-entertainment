@@ -1,12 +1,14 @@
+import FloatingSocialLinks from "@/components/FloatingSocialLinks";
 import EventsBanner from "@/sections/EventsBanner";
 import HomeBanner from "@/sections/HomeBanner";
 import MusicBanner from "@/sections/MusicBanner";
 import ShopBanner from "@/sections/ShopBanner";
-import React from "react";
 
 function Home() {
   return (
     <div>
+      {/* Floating Socials */}
+      <FloatingSocialLinks />
       {/* HOME BANNER */}
       <HomeBanner />
       {/* Music Banner */}

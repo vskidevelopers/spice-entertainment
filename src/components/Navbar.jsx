@@ -1,6 +1,6 @@
-import React, { useState } from "react";
 import logo from "../assets/images/logo.png";
 import { User } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -10,19 +10,19 @@ const Navbar = () => {
   return (
     <nav className="bg-black text-white p-4 flex items-center justify-between fixed w-full z-50 ">
       <div className="flex items-center">
-        <div className="text-xl font-bold">
+        <Link to="/" className="text-xl font-bold">
           <img className="block h-12 w-auto " src={logo} alt="Your Company" />
-        </div>
+        </Link>
         <div className="hidden md:flex space-x-4 ml-10">
           <Link to="/music" className="hover:text-gray-400">
             Music
           </Link>
-          <a href="#shop" className="hover:text-gray-400">
+          <Link to="/shop" className="hover:text-gray-400">
             Shop
-          </a>
-          <a href="#events" className="hover:text-gray-400">
+          </Link>
+          <Link to="/events" className="hover:text-gray-400">
             Events
-          </a>
+          </Link>
         </div>
       </div>
       <div className="relative">
