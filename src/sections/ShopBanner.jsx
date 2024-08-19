@@ -1,5 +1,4 @@
 import ShopCarousel from "@/components/ShopCarousel";
-import React from "react";
 
 export default function ShopBanner() {
   return (

@@ -1,4 +1,4 @@
-import eventImage from "../assets/images/Infamous.jpeg";
+import eventImage from "../assets/images/infamous.jpeg";
 
 export default function EventCard() {
   return (
