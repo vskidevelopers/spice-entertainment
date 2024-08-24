@@ -15,6 +15,8 @@ import AdminLayout from "./layouts/AdminLayout";
 import PrivateRoutes from "./auth/PrivateRoutes";
 import Login from "./auth/LogIn";
 import { AuthProvider } from "./auth/AuthContext";
+import AdminDashboard from "./sections/admin/AdminDashboard";
+import AdminMusic from "./sections/admin/AdminMusic";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,7 +31,11 @@ const router = createBrowserRouter(
 
       {/* Admin-Related Routes */}
       <Route element={<PrivateRoutes />}>
-        <Route path="admin" element={<AdminLayout />}></Route>
+        <Route path="admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+
+          <Route path="music" element={<AdminMusic />} />
+        </Route>
       </Route>
     </Route>
   )

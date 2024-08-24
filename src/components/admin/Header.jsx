@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import {
   Home,
   LineChart,
-  Package,
+  Music,
   Package2,
   PanelLeft,
   Search,
   ShoppingCart,
-  Users2,
+  Calendar,
   CircleUser,
 } from "lucide-react";
 import {
@@ -62,7 +62,7 @@ const Header = () => {
               className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
             >
               <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
-              <span className="sr-only">Birven Supplies</span>
+              <span className="sr-only">Spice Entertainment</span>
             </Link>
             <Link
               href="#"
@@ -72,25 +72,25 @@ const Header = () => {
               Dashboard
             </Link>
             <Link
-              to="/admin/quotations"
+              to="/admin/merchandise"
               className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
             >
               <ShoppingCart className="h-5 w-5" />
-              Quotation
+              Merchandise
             </Link>
             <Link
-              to="/admin/products"
+              to="/admin/music"
               className="flex items-center gap-4 px-2.5 text-foreground"
             >
-              <Package className="h-5 w-5" />
-              Products
+              <Music className="h-5 w-5" />
+              Music
             </Link>
             <Link
-              to="/admin/reviews"
+              to="/admin/events"
               className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
             >
-              <Users2 className="h-5 w-5" />
-              Reviews
+              <Calendar className="h-5 w-5" />
+              Events
             </Link>
             <Link
               to="/admin/teams"
@@ -112,12 +112,12 @@ const Header = () => {
           <BreadcrumbSeparator />
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
-              <Link href="#">Products</Link>
+              <Link href="#">Music</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>All Products</BreadcrumbPage>
+            <BreadcrumbPage>All Music</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
