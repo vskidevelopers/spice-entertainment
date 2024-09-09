@@ -217,5 +217,169 @@ export const useTracksFunctions = () => {
     }
   };
 
-  return { addTrackRecord, addAlbumRecord };
+  const getAllTrackRecords = async () => {
+    const tracksCollectionRef = collection(db, "Tracks");
+    console.log("fetch_all_track_records() initialized ...");
+    try {
+      const allTracksQuery = query(tracksCollectionRef);
+      const allTracksSnapShot = await getDocs(allTracksQuery);
+      console.log("all_tracks_snapshot >> ", allTracksSnapShot);
+
+      if (allTracksSnapShot?.empty) {
+        console.log("No Tracks Found");
+        return {
+          collection: "Tracks",
+          success: false,
+          data: null,
+          message: "No Tracks Found",
+        };
+      } else {
+        console.log("all_tracks_snapshot >> ", allTracksSnapShot);
+        const allTracksData = allTracksSnapShot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        return {
+          collection: "Tracks",
+          success: true,
+          data: allTracksData,
+          message: `${allTracksData.length} tracks_found`,
+          length: allTracksData?.length,
+        };
+      }
+    } catch (error) {
+      console.log("Error in getting tracks >>> ", error);
+      return {
+        collection: "Tracks",
+        success: false,
+        data: null,
+        message: `tracks_fetching_failed ${error}`,
+      };
+    }
+  };
+
+  const getAllAlbumRecords = async () => {
+    const albumsCollectionRef = collection(db, "Albums");
+    console.log("fetch_all_albums_records() initialized ...");
+    try {
+      const allAlbumsQuery = query(albumsCollectionRef);
+      const allAlbumsSnapShot = await getDocs(allAlbumsQuery);
+      console.log("all_albums_snapshot >> ", allAlbumsSnapShot);
+
+      if (allAlbumsSnapShot?.empty) {
+        console.log("No Albums Found");
+        return {
+          collection: "Albums",
+          success: false,
+          data: null,
+          message: "No Albums Found",
+        };
+      } else {
+        console.log("all_albums_snapshot >> ", allAlbumsSnapShot);
+        const allAlbumsData = allAlbumsSnapShot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        return {
+          collection: "Albums",
+          success: true,
+          data: allAlbumsData,
+          message: `${allAlbumsData.length} albums_found`,
+          length: allAlbumsData?.length,
+        };
+      }
+    } catch (error) {
+      console.log("Error in getting albums >>> ", error);
+      return {
+        collection: "Albums",
+        success: false,
+        data: null,
+        message: `albums_fetching_failed ${error}`,
+      };
+    }
+  };
+
+  // TODO:
+  // markAsLatestRelease
+
+  return {
+    addTrackRecord,
+    addAlbumRecord,
+    getAllAlbumRecords,
+    getAllTrackRecords,
+  };
+};
+
+// useMerchFunctions
+
+export const useMerchFunctions = () => {
+  const addMerchRecord = async (data, merchType) => {
+    try {
+      const newMerchCollectionRef = collection(
+        db,
+        "Merchandise",
+        merchType,
+        merchType
+      );
+      const newMerchDoc = doc(newMerchCollectionRef);
+      await setDoc(newMerchDoc, data);
+      return {
+        collection: "Merchandise",
+        subCollection: merchType,
+        success: true,
+        data: data,
+        message: `a_new_${merchType}_RECORD_added_succesfully`,
+      };
+    } catch (error) {
+      console.log(`Error in adding a new ${merchType} >>> `, error);
+      return {
+        collection: "Merchandise",
+        subCollection: merchType,
+        success: false,
+        data: null,
+        message: `${merchType}_adding_failed ${error}`,
+      };
+    }
+  };
+
+  const getMerchRecordsByType = async (merchType) => {
+    console.log(`getMerchByType(${merchType}) initialized ...`);
+
+    const merchTypeCollectionRef = collection(
+      db,
+      "Merchandise",
+      merchType,
+      merchType
+    );
+    const merchQuery = query(merchTypeCollectionRef);
+
+    const merchTypeSnapshot = await getDocs(merchQuery);
+
+    if (merchTypeSnapshot?.empty) {
+      console.log(`No merch exists in the selected category >>> ${merchType}`);
+      return {
+        success: false,
+        data: [],
+        message: `No merch exists in the selected Category >> ${merchType}`,
+      };
+    } else {
+      console.log("merchTypeSnapshot from fetchMerch >> ", merchTypeSnapshot);
+      const merchData = merchTypeSnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      return {
+        success: true,
+        data: merchData,
+        message: "Merch exist in the selected category",
+      };
+    }
+  };
+
+  return {
+    addMerchRecord,
+    getMerchRecordsByType,
+  };
 };

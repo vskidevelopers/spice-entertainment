@@ -17,6 +17,8 @@ import Login from "./auth/LogIn";
 import { AuthProvider } from "./auth/AuthContext";
 import AdminDashboard from "./sections/admin/AdminDashboard";
 import AdminMusic from "./sections/admin/AdminMusic";
+import NotFoundPage from "./pages/NotFound";
+import AdminMerch from "./sections/admin/AdminMerch";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,11 +32,12 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Admin-Related Routes */}
-      <Route element={<PrivateRoutes />}>
+      <Route element={<PrivateRoutes />} errorElement={<NotFoundPage />}>
         <Route path="admin" element={<AdminLayout />}>
           <Route index element={<AdminDashboard />} />
 
           <Route path="music" element={<AdminMusic />} />
+          <Route path="merchandise" element={<AdminMerch />} />
         </Route>
       </Route>
     </Route>

@@ -1,5 +1,5 @@
-import AddAlbumForm from "@/components/admin/AddAlbumForm";
-import AddTrackForm from "@/components/admin/AddTrackForm";
+import AddAlbumForm from "@/components/admin/forms/AddAlbumForm";
+import AddTrackForm from "@/components/admin/forms/AddTrackForm";
 import LatestReleaseTable from "@/components/admin/LatestReleaseTable";
 import MusicTable from "@/components/admin/MusicTable";
 import { Button } from "@/components/ui/button";
@@ -19,8 +19,34 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useTracksFunctions } from "@/firebase/firebase";
+import { useEffect, useState } from "react";
 
 export default function AdminMusic() {
+  const [tracks, setTracks] = useState([]);
+  const [albums, setAlbums] = useState();
+
+  const { getAllAlbumRecords, getAllTrackRecords } = useTracksFunctions();
+
+  const fetchTracksandAlbums = async () => {
+    const getAllTracksResponse = await getAllTrackRecords();
+    console.log("getAllTracksResponse >> ", getAllTracksResponse);
+    const allTracksData = getAllTracksResponse?.data;
+    console.log("allTracksData >> ", allTracksData);
+    setTracks(allTracksData);
+
+    const getAllAlbumResponse = await getAllAlbumRecords();
+    console.log("getAllAlbumResponse >> ", getAllAlbumResponse);
+    const allAlbumsData = getAllAlbumResponse?.data;
+    console.log("allAlbumsData >> ", allAlbumsData);
+
+    setAlbums(allAlbumsData);
+  };
+
+  useEffect(() => {
+    fetchTracksandAlbums();
+  }, []);
+
   return (
     <div>
       <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 xl:grid-cols-3">
@@ -50,7 +76,7 @@ export default function AdminMusic() {
               <Card x-chunk="dashboard-05-chunk-1">
                 <CardHeader className="pb-2">
                   <CardDescription> 🎶 All Music</CardDescription>
-                  <CardTitle className="text-4xl">123 </CardTitle>
+                  <CardTitle className="text-4xl">{tracks?.length} </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-xs text-muted-foreground">
@@ -78,7 +104,7 @@ export default function AdminMusic() {
               <Dialog>
                 <CardHeader className="pb-2">
                   <CardDescription> 🎶 All Albums</CardDescription>
-                  <CardTitle className="text-4xl">15</CardTitle>
+                  <CardTitle className="text-4xl">{albums?.length}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-xs text-muted-foreground">
@@ -107,7 +133,7 @@ export default function AdminMusic() {
 
           {/* Table DIV */}
           <div className="w-full h-full">
-            <MusicTable />
+            <MusicTable tracks={tracks} albums={albums} />
           </div>
         </div>
 
