@@ -2,6 +2,18 @@ import album from "../assets/images/album.jpeg";
 import MusicPlatforms from "@/components/MusicPlatforms";
 
 export default function MusicDetail() {
+  const music = {
+    id: 1,
+    title: "Music Title",
+    artist: "Artist Name",
+    album: "Album Name",
+    platforms: [
+      { Spotify: "" },
+      { "Apple Music": "" },
+      { "YouTube Music": "" },
+    ],
+  };
+
   return (
     <div
       className="relative flex w-full justify-center pt-20 h-full bg-cover bg-center"
@@ -27,7 +39,7 @@ export default function MusicDetail() {
           </div>
         </div>
         <div className="py-8">
-          <MusicPlatforms />
+          <MusicPlatforms music={music} />
         </div>
       </div>
     </div>

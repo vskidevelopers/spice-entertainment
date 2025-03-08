@@ -7,6 +7,7 @@ import {
   FaAmazon,
 } from "react-icons/fa";
 import { SiTidal } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
 
 const platforms = [
   {
@@ -42,23 +43,38 @@ const platforms = [
   },
 ];
 
-const MusicPlatforms = () => {
+const MusicPlatforms = ({ music }) => {
+  console.log("music values form platforms >> ", music?.id);
+
+  const navigate = useNavigate();
   return (
     <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-      {platforms.map((platform, index) => (
-        <div
-          key={index}
-          className="flex items-center justify-between p-2 border-b border-gray-700 last:border-none"
-        >
-          <div className="flex items-center">
-            <div className="mr-3 text-2xl">{platform.icon}</div>
-            <span className="text-white">{platform.name}</span>
+      {platforms?.map((platform, index) => {
+        console.log("platform >> ", platform);
+        console.log("index >> ", index);
+
+        return (
+          <div
+            key={index}
+            className="flex items-center justify-between p-2 border-b border-gray-700 last:border-none"
+          >
+            <div className="flex items-center">
+              <div className="mr-3 text-2xl">{platform.icon}</div>
+              <span className="text-white">{platform.name}</span>
+            </div>
+            <button
+              onClick={
+                platform?.name === "YouTube Music"
+                  ? () => navigate(`youtube/${music?.id}`)
+                  : () => console.log("action == ", platform?.action)
+              }
+              className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition duration-300"
+            >
+              {platform.action}
+            </button>
           </div>
-          <button className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition duration-300">
-            {platform.action}
-          </button>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

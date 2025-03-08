@@ -19,6 +19,9 @@ import AdminDashboard from "./sections/admin/AdminDashboard";
 import AdminMusic from "./sections/admin/AdminMusic";
 import NotFoundPage from "./pages/NotFound";
 import AdminMerch from "./sections/admin/AdminMerch";
+import Shop from "./pages/Shop";
+import AdminEvents from "./sections/admin/AdminEvents";
+import YoutubeHome from "./pages/YoutubeHome";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +30,12 @@ const router = createBrowserRouter(
       <Route path="/" element={<UserUi />}>
         <Route index element={<Home />} />
         <Route path="music/:id" element={<MusicDetail />} />
+        <Route
+          path={"music/:id/youtube/:id" || "youtube/:id"}
+          element={<YoutubeHome />}
+        />
         <Route path="music" element={<Music />} />
+        <Route path="shop" element={<Shop />} />
         <Route path="login" element={<Login />} />
       </Route>
 
@@ -37,6 +45,7 @@ const router = createBrowserRouter(
           <Route index element={<AdminDashboard />} />
 
           <Route path="music" element={<AdminMusic />} />
+          <Route path="events" element={<AdminEvents />} />
           <Route path="merchandise" element={<AdminMerch />} />
         </Route>
       </Route>
