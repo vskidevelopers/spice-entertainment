@@ -22,6 +22,7 @@ import AdminMerch from "./sections/admin/AdminMerch";
 import Shop from "./pages/Shop";
 import AdminEvents from "./sections/admin/AdminEvents";
 import YoutubeHome from "./pages/YoutubeHome";
+import Events from "./pages/Events";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,6 +36,8 @@ const router = createBrowserRouter(
           element={<YoutubeHome />}
         />
         <Route path="music" element={<Music />} />
+        <Route path="events" element={<Events />} />
+
         <Route path="shop" element={<Shop />} />
         <Route path="login" element={<Login />} />
       </Route>
