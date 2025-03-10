@@ -260,44 +260,58 @@ export const useTracksFunctions = () => {
   };
 
   const getAllAlbumRecords = async () => {
-    const albumsCollectionRef = collection(db, "Albums");
-    console.log("fetch_all_albums_records() initialized ...");
     try {
-      const allAlbumsQuery = query(albumsCollectionRef);
-      const allAlbumsSnapShot = await getDocs(allAlbumsQuery);
-      console.log("all_albums_snapshot >> ", allAlbumsSnapShot);
-
-      if (allAlbumsSnapShot?.empty) {
-        console.log("No Albums Found");
-        return {
-          collection: "Albums",
-          success: false,
-          data: null,
-          message: "No Albums Found",
-        };
-      } else {
-        console.log("all_albums_snapshot >> ", allAlbumsSnapShot);
-        const allAlbumsData = allAlbumsSnapShot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-
-        return {
-          collection: "Albums",
-          success: true,
-          data: allAlbumsData,
-          message: `${allAlbumsData.length} albums_found`,
-          length: allAlbumsData?.length,
-        };
-      }
-    } catch (error) {
-      console.log("Error in getting albums >>> ", error);
+      const albumsCollectionRef = collection(db, "Albums"); //Replace 'Albums'
+      const albumsSnapshot = await getDocs(albumsCollectionRef);
+      const albumsData = albumsSnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
       return {
         collection: "Albums",
-        success: false,
-        data: null,
-        message: `albums_fetching_failed ${error}`,
+        success: true,
+        data: albumsData,
+        message: `${albumsData?.length} tracks_found`,
+        length: albumsData?.length,
       };
+    } catch (error) {
+      console.error("Error fetching albums: ", error);
+      // Handle the error appropriately, perhaps displaying an error message to the user
+      throw error; // Re-throw the error to be handled by a higher-level function
+    }
+  };
+
+  //Fetch single track by ID
+  const fetchTrackById = async (trackId) => {
+    try {
+      const trackRef = doc(db, "Tracks", trackId); // Replace 'Tracks' with your collection name
+      const trackDoc = await getDoc(trackRef);
+      if (trackDoc.exists()) {
+        return { id: trackDoc?.id, data: trackDoc.data(), success: true };
+      } else {
+        console.log(`Track with ID ${trackId} not found`);
+        return null; //Or throw an error, depending on your error handling strategy.
+      }
+    } catch (error) {
+      console.error(`Error fetching track ${trackId}: `, error);
+      throw error;
+    }
+  };
+
+  //Fetch single album by ID
+  const fetchAlbumById = async (albumId) => {
+    try {
+      const albumRef = doc(db, "Albums", albumId); // Replace 'Albums' with your collection name
+      const albumDoc = await getDoc(albumRef);
+      if (albumDoc.exists()) {
+        return { id: albumDoc.id, data: albumDoc.data(), success: true };
+      } else {
+        console.log(`Album with ID ${albumId} not found`);
+        return null; // Or throw an error, as needed.
+      }
+    } catch (error) {
+      console.error(`Error fetching album ${albumId}: `, error);
+      throw error;
     }
   };
 
@@ -309,6 +323,8 @@ export const useTracksFunctions = () => {
     addAlbumRecord,
     getAllAlbumRecords,
     getAllTrackRecords,
+    fetchAlbumById,
+    fetchTrackById,
   };
 };
 

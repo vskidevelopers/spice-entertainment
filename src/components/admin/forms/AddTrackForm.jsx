@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Card,
   CardHeader,
@@ -13,7 +14,7 @@ import { useForm } from "react-hook-form";
 import { useUploadImage } from "@/firebase/firebase";
 import { useTracksFunctions } from "@/firebase/firebase";
 
-export default function AddTrackForm() {
+export default function AddTrackForm({ albums }) {
   const {
     register,
     handleSubmit,
@@ -164,9 +165,14 @@ export default function AddTrackForm() {
                 <label htmlFor="album">Album</label>
                 <select id="album" {...register("album")}>
                   <option value="none">None</option>
-                  <option value="Album 1">Album 1</option>
-                  <option value="Album 2">Album 2</option>
-                  <option value="Album 3">Album 3</option>
+                  {albums?.map((album, i) => {
+                    return (
+                      <option key={i} value={album?.albumName}>
+                        {album?.albumName}
+                      </option>
+                    );
+                  })}
+
                   {/* Add more options as needed */}
                 </select>
               </div>

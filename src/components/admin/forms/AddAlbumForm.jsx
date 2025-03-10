@@ -26,10 +26,6 @@ function AddAlbumForm() {
 
   const [loading, setLoading] = useState(false);
   const [, setImageUploaded] = useState(false);
-  const [isLatestRelease, setIsLatestRelease] = useState(false);
-  const handleToggle = () => {
-    setIsLatestRelease(!isLatestRelease);
-  };
 
   //   Date FORMATTING
   const currentDate = new Date();
@@ -152,64 +148,6 @@ function AddAlbumForm() {
                 {errors.releaseDate && (
                   <span className="text-red-500">This field is required</span>
                 )}
-              </div>
-
-              {/* Links */}
-              <div className="grid gap-2">
-                <label htmlFor="spotify">Spotify Link</label>
-                <input
-                  id="spotify"
-                  type="url"
-                  placeholder="Spotify URL"
-                  {...register("spotify")}
-                />
-              </div>
-              <div className="grid gap-2">
-                <label htmlFor="youtube">YouTube Link</label>
-                <input
-                  id="youtube"
-                  type="url"
-                  placeholder="YouTube URL"
-                  {...register("youtube")}
-                />
-              </div>
-              <div className="grid gap-2">
-                <label htmlFor="boomplay">Boomplay Link</label>
-                <input
-                  id="boomplay"
-                  type="url"
-                  placeholder="Boomplay URL"
-                  {...register("boomplay")}
-                />
-              </div>
-              <div className="grid gap-2">
-                <label htmlFor="audiomac">Audiomack Link</label>
-                <input
-                  id="audiomac"
-                  type="url"
-                  placeholder="Audiomack URL"
-                  {...register("audiomac")}
-                />
-              </div>
-              <div className="grid gap-2">
-                <label htmlFor="itunes">iTunes Link</label>
-                <input
-                  id="itunes"
-                  type="url"
-                  placeholder="iTunes URL"
-                  {...register("itunes")}
-                />
-              </div>
-              <div className="grid gap-2">
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    checked={isLatestRelease}
-                    onChange={handleToggle}
-                    {...register("latestRelease")}
-                  />
-                  <span className="ml-2">Latest Release</span>
-                </label>
               </div>
             </CardContent>
             <CardFooter>

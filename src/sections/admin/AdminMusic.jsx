@@ -95,7 +95,7 @@ export default function AdminMusic() {
                     </DialogTitle>
                   </DialogHeader>
                   {/* Add Track Form will be used here */}
-                  <AddTrackForm />
+                  <AddTrackForm albums={albums} />
                 </DialogContent>
               </Card>
             </Dialog>

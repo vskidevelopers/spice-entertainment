@@ -13,7 +13,7 @@ function MusicBanner() {
       }}
     >
       <div className="flex flex-col items-center w-sceen text-center">
-        <div className="relative flex flex-col justify-center items-center py-10 w-4/5 text-white">
+        <div className="relative flex flex-col justify-center items-center py-10 w-4/5 text-yellow-800">
           <div className="w-full md:w-1/2 text-start md:text-center">
             <h2 className="text-nowrap text-rose-500 text-md font-semibold uppercase ">
               Made the Hard WAY!

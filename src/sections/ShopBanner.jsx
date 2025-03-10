@@ -2,7 +2,7 @@ import ShopCarousel from "@/components/ShopCarousel";
 
 export default function ShopBanner() {
   return (
-    <div className=" container mx-auto px-10 py-20">
+    <div className=" container mx-auto px-10 py-20 bg-yellow-900/20">
       <div className="flex flex-col items-center w-sceen text-center">
         <div className="relative flex flex-col justify-center items-center py-10 w-4/5">
           <div className="w-full md:w-1/2 text-start md:text-center">

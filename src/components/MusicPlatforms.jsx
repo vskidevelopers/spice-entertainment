@@ -44,7 +44,7 @@ const platforms = [
 ];
 
 const MusicPlatforms = ({ music }) => {
-  console.log("music values form platforms >> ", music?.id);
+  console.log("music values form platforms >> ", music);
 
   const navigate = useNavigate();
   return (
