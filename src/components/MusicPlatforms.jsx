@@ -14,41 +14,52 @@ const platforms = [
     name: "Apple Music",
     icon: <FaApple className="text-red-500" />,
     action: "Play",
+    badge: "Coming Soon",
   },
   {
     name: "Spotify",
     icon: <FaSpotify className="text-green-500" />,
     action: "Play",
+    badge: "Coming Soon",
   },
   {
     name: "YouTube Music",
     icon: <FaYoutube className="text-red-600" />,
     action: "Play",
+    badge: "Recommended",
   },
   {
     name: "Email",
     icon: <FaEnvelope className="text-gray-500" />,
     action: "Join",
+    badge: "Coming Soon",
   },
-  { name: "TIDAL", icon: <SiTidal className="text-black" />, action: "Play" },
+  {
+    name: "TIDAL",
+    icon: <SiTidal className="text-black" />,
+    action: "Play",
+    badge: "Coming Soon",
+  },
   {
     name: "iTunes Store",
     icon: <FaItunesNote className="text-purple-500" />,
     action: "Download",
+    badge: "Coming Soon",
   },
   {
     name: "Amazon Music",
     icon: <FaAmazon className="text-blue-500" />,
     action: "Play",
+    badge: "Coming Soon",
   },
 ];
 
 const MusicPlatforms = ({ music }) => {
-  console.log("music values form platforms >> ", music);
+  console.log("music values from platforms >> ", music);
 
   const navigate = useNavigate();
   return (
-    <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
+    <div className="bg-gray-800 py-4 max-w-96 rounded-lg shadow-lg">
       {platforms?.map((platform, index) => {
         console.log("platform >> ", platform);
         console.log("index >> ", index);
@@ -56,7 +67,7 @@ const MusicPlatforms = ({ music }) => {
         return (
           <div
             key={index}
-            className="flex items-center justify-between p-2 border-b border-gray-700 last:border-none"
+            className="relative flex items-center justify-between px-2 py-3 border-b border-gray-700 last:border-none"
           >
             <div className="flex items-center">
               <div className="mr-3 text-2xl">{platform.icon}</div>
@@ -72,6 +83,15 @@ const MusicPlatforms = ({ music }) => {
             >
               {platform.action}
             </button>
+            <span
+              className={`absolute -top-2 -right-9 px-1 py-0.5 text-xs rounded ${
+                platform.badge === "Recommended"
+                  ? "bg-green-500 text-white"
+                  : "bg-gray-500 text-white hidden"
+              }`}
+            >
+              {platform.badge}
+            </span>
           </div>
         );
       })}
