@@ -68,13 +68,13 @@ const Navbar = () => {
         </button>
         {isDropdownOpen && (
           <div className="absolute z-40 right-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg">
-            <a href="#music" className="block px-4 py-2 hover:bg-gray-200">
+            <a href="/music" className="block px-4 py-2 hover:bg-gray-200">
               Music
             </a>
-            <a href="#shop" className="block px-4 py-2 hover:bg-gray-200">
+            <a href="/shop" className="block px-4 py-2 hover:bg-gray-200">
               Shop
             </a>
-            <a href="#events" className="block px-4 py-2 hover:bg-gray-200">
+            <a href="/events" className="block px-4 py-2 hover:bg-gray-200">
               Events
             </a>
             <a href="#profile" className="block px-4 py-2 hover:bg-gray-200">
