@@ -45,7 +45,7 @@ const HomeBanner = () => {
             {album?.albumName}
           </h1>
           <Link
-            to="music/1"
+            to={`albums/${album?.id}`}
             className="px-4 py-2 border border-white text-white hover:bg-white hover:text-black transition duration-300"
           >
             Stream / Download

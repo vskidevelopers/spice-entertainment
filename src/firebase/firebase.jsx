@@ -298,6 +298,68 @@ export const useTracksFunctions = () => {
     }
   };
 
+  const fetchTracksByAlbum = async (albumName) => {
+    // Validate albumName before querying Firestore
+    if (!albumName) {
+      console.error("Error: albumName is required for fetching tracks.");
+      return {
+        collection: "Tracks",
+        success: false,
+        data: null,
+        message: "Album name is required",
+      };
+    }
+
+    const tracksCollectionRef = collection(db, "Tracks");
+    console.log("fetchTracksByAlbum() initialized for album:", albumName);
+
+    try {
+      // Firestore query
+      const allTracksQueryByAlbum = query(
+        tracksCollectionRef,
+        where("album", "==", albumName)
+      );
+      const allTracksSnapShot = await getDocs(allTracksQueryByAlbum);
+
+      // Check if no tracks found
+      if (allTracksSnapShot.empty) {
+        console.warn("No tracks found for album:", albumName);
+        return {
+          collection: "Tracks",
+          success: false,
+          data: null,
+          message: "No Tracks Found",
+        };
+      }
+
+      // Extract track data
+      const allTracksData = allTracksSnapShot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      console.log(
+        `Found ${allTracksData.length} tracks for album: ${albumName}`
+      );
+
+      return {
+        collection: "Tracks",
+        success: true,
+        data: allTracksData,
+        message: `${allTracksData.length} tracks found`,
+        length: allTracksData.length,
+      };
+    } catch (error) {
+      console.error("Error fetching tracks:", error);
+      return {
+        collection: "Tracks",
+        success: false,
+        data: null,
+        message: `Error fetching tracks: ${error.message}`,
+      };
+    }
+  };
+
   //Fetch single album by ID
   const fetchAlbumById = async (albumId) => {
     try {
@@ -325,6 +387,7 @@ export const useTracksFunctions = () => {
     getAllTrackRecords,
     fetchAlbumById,
     fetchTrackById,
+    fetchTracksByAlbum,
   };
 };
 

@@ -10,7 +10,7 @@ function AlbumsSidebar({ albums }) {
         </h2>
       </div>
       <div className="flex flex-col">
-        {albums.map((album, i) => (
+        {albums?.map((album, i) => (
           <div key={i} className="py-2 border-b border-gray-700">
             <AlbumSidebarItem album={album} />
           </div>

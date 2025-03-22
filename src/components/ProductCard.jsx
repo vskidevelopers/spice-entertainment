@@ -1,5 +1,3 @@
-import React from "react";
-
 const ProductCard = ({ product, data }) => {
   console.log("data >>> ", data);
   return (

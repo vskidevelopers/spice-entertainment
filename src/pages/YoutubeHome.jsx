@@ -63,7 +63,7 @@ function YoutubeHome() {
       {" "}
       <div className="relative flex flex-col items-center justify-center min-h-screen bg-black bg-opacity-50 lg:top-[-9rem]">
         {" "}
-        <div className="absolute top-[6rem] md:top-[6.5rem] w-full max-w-[26rem] md:max-w-[33rem]">
+        <div className="absolute top-[6rem] md:top-[14rem] w-full max-w-[26rem] md:max-w-[37rem]">
           {" "}
           <div className=" bg-black shadow-lg">
             {" "}
