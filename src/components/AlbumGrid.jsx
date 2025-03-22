@@ -5,20 +5,41 @@ import MusicCard from "./MusicCard";
 
 function AlbumGrid({ album }) {
   console.log("album from albumGrid >> ", album);
+  const albumToFetch = album;
 
   const { fetchTracksByAlbum } = useTracksFunctions();
 
   const [tracks, setTracks] = useState([]);
 
   const fetchTracks = async () => {
-    const fetchTracksbyAlbumResponse = await fetchTracksByAlbum(
-      album?.albumName
-    );
+    let fetchTracksbyAlbumResponse;
+    if (!albumToFetch) {
+      console.log("no album name");
+      try {
+        fetchTracksbyAlbumResponse = await fetchTracksByAlbum(album?.albumName);
+      } catch (error) {
+        console.log("error >> ", error);
+      }
+    } else {
+      console.log("album to fetch tracks from >> ", albumToFetch);
+
+      fetchTracksbyAlbumResponse = await fetchTracksByAlbum(album?.albumName);
+    }
+
     if (fetchTracksbyAlbumResponse?.success) {
       console.log(
         "fetchTracksbyAlbumResponse >>> ",
         fetchTracksbyAlbumResponse
       );
+      const tracksData = fetchTracksbyAlbumResponse?.data;
+
+      setTracks(tracksData);
+    } else {
+      console.log(
+        "fallback fetchTracksbyAlbumResponse >>> ",
+        fetchTracksbyAlbumResponse
+      );
+      fetchTracksbyAlbumResponse = await fetchTracksByAlbum(album?.albumName);
       const tracksData = fetchTracksbyAlbumResponse?.data;
 
       setTracks(tracksData);

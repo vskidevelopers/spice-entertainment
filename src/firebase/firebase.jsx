@@ -300,15 +300,6 @@ export const useTracksFunctions = () => {
 
   const fetchTracksByAlbum = async (albumName) => {
     // Validate albumName before querying Firestore
-    if (!albumName) {
-      console.error("Error: albumName is required for fetching tracks.");
-      return {
-        collection: "Tracks",
-        success: false,
-        data: null,
-        message: "Album name is required",
-      };
-    }
 
     const tracksCollectionRef = collection(db, "Tracks");
     console.log("fetchTracksByAlbum() initialized for album:", albumName);

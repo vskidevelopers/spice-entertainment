@@ -63,7 +63,7 @@ function YoutubeHome() {
       {" "}
       <div className="relative flex flex-col items-center justify-center min-h-screen bg-black bg-opacity-50 lg:top-[-9rem]">
         {" "}
-        <div className="absolute top-[6rem] md:top-[14rem] w-full max-w-[26rem] md:max-w-[37rem]">
+        <div className="absolute top-[9rem] md:top-[14rem] w-full max-w-[26rem] md:max-w-[37rem]">
           {" "}
           <div className=" bg-black shadow-lg">
             {" "}
@@ -79,7 +79,7 @@ function YoutubeHome() {
               ></iframe>{" "}
             </div>{" "}
           </div>{" "}
-          <div className="absolute bottom-[-7rem] md:bottom-[-7rem] w-full flex justify-center ">
+          <div className="absolute bottom-[-9rem] md:bottom-[-7rem] w-full flex justify-center ">
             <Link to={-1}>
               <button
                 className="bg-gradient-to-r from-gray-800 to-black text-center w-48 rounded-2xl h-14 relative text-white text-xl font-semibold group"
